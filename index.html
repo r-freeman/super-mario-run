@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super Mario Run</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+
+    <style>
+        body {
+            margin: 0
+        }
+
+        .game {
+            margin: 0;
+            display: block;
+            background: #000;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0);
+        }
+    </style>
+</head>
+<body>
+
+<div id="super-mario-run" class="game">
+
+</div>
+
+<!-- build:js phaser.min.js -->
+<script src="node_modules/phaser/build/phaser.js"></script>
+<!-- /build -->
+
+<!-- build:js bundle.min.js -->
+<script src="bundle.js"></script>
+<!-- /build -->
+
+</body>
+</html>
