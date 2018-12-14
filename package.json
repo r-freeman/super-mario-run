@@ -6,11 +6,10 @@
     "start": "budo src/main.js:bundle.js -p 8080 --live -- -d -e src/main.js -t [babelify --comments false --presets es2015]",
     "prebuild": "mkdirp dist",
     "build": "npm run build:js && npm run build:html && npm run copy:all",
-    "build:js": "browserify -d -e src/main.js -t [babelify --comments false --presets es2015] | uglifyjs -cm > dist/bundle.min.js",
+    "build:js": "browserify -d -e src/main.js -t [babelify --comments false --presets es2015] | uglifyjs -cm > ./dist/bundle.min.js && cat ./node_modules/phaser/build/phaser.js | uglifyjs -cm > ./dist/phaser.min.js",
     "build:html": "htmlprocessor index.html -o dist/index.html",
-    "copy:all": "npm run copy:assets && npm run copy:phaser",
-    "copy:assets": "cp -r ./assets dist/",
-    "copy:phaser": "ncp ./node_modules/phaser/build/phaser.js dist/phaser.min.js"
+    "copy:all": "npm run copy:assets",
+    "copy:assets": "cp -r ./assets ./dist"
   },
   "keywords": [],
   "author": "",
